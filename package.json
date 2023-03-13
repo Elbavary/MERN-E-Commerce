@@ -5,13 +5,13 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node backend/server",
+    "start": "npm run build --prefix frontend && node backend/server",
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "deploy": "npm i -f --prefix frontend && npm run build --prefix frontend && node backend/server"
+    "deploy": "npm i && npm i -f --prefix frontend"
   },
   "author": "Khaled Gamel",
   "license": "ISC",
